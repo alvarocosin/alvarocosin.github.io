@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf8">
+        <title>Álvaro Cosín Portfolio</title>
+        <meta name="description" content="Full-Stack .NET developer from Spain">
+        <script src="https://kit.fontawesome.com/b1ca11bc27.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        
+        <script>
+            document.documentElement.classList.add('theme-a');
+        </script>
+    </head>
+    <body>
+        <figure id="bg"></figure>
+    
+        <nav id="navigation" data-highlight-visible>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <main>
+            <section id="about" data-auto-theme="i">
+                <header>
+                    <h1>Hi! I'm Álvaro</h1>
+                    <p>I'm a Full-Stack .NET developer</p>
+                    <p>Python and C# Enthusiast from Spain</p>
+                </header>
+    
+                <nav>
+                    <a href="https://github.com/alvarocosin" target="_blank" rel="noopener" class="icon-github">GitHub</a>
+                    <a href="https://www.linkedin.com/in/alvarocosincebollada/"> <i target="_blank" rel="noopener" class="fab fa-linkedin-in"></i> Linkedin</a>
+                    <a href="./cv/cv2023.pdf" target="_blank"> <i class="far fa-file"> </i> Resume</a>
+                </nav>
+                <nav>
+                    <a href="mailto:cosin.alvaro@gmail.com?subject=From%20website">
+                        <p><i class="far fa-envelope">  </i> cosin.alvaro@gmail.com</p>
+                    </a>
+                </nav>
+            </section>
+            <section id="work" data-auto-theme="g">
+                <header>
+                    <h2>Projects</h2>
+                    <p>Check out some of my <a href="https://github.com/alvarocosin" target="_blank" rel="noopener">GitHub projects</a>.</p>
+                </header>
+                <div>
+                    <article>
+                        <h3>YT-Get</h3>
+                        <p>Desktop application to download YouTube videos or playlists.</p>
+                        <nav>
+                            <a href="https://github.com/alvarocosin/YTDownloader#readme" target="_blank" rel="noopener" class="icon-github">GitHub</a>
+                        </nav>
+                    </article>
+    
+                    <article>
+                        <h3>Biblioteca</h3>
+                        <p>Desktop application to see my personal home library books list.</p>
+                        <nav>
+                            <a href="https://github.com/arabacibahadir/Biblioteca#readme" target="_blank" rel="noopener" class="icon-github">GitHub</a>
+                        </nav>
+                    </article>
+
+                    <article>
+                        <h3>FilmAnalyst</h3>
+                        <p>Python script to web-scrap film data for my personal movies list.</p>
+                        <nav>
+                            <a href="https://github.com/alvarocosin/YTDownloader#readme" target="_blank" rel="noopener" class="icon-github">GitHub</a>
+                        </nav>
+                    </article>
+                </div>
+            </section>
+            <section id="contact" data-auto-theme="a" data-camera-pos='{"x":1.2928716579423913,"y":0.8710942112817563,"z":14.08160151207296,"rx":-2.254564420415036,"ry":-0.9679905485695725,"rz":-2.3508026523748886}'>
+    
+                <header>
+    
+                    <h2>Contact</h2>
+    
+                    <p>You can <a href="mailto:cosin.alvaro@gmail.com?subject=From%20website">write me an e-mail</a> if you like.<br></p>
+    
+                    <a href="mailto:cosin.alvaro@gmail.com?subject=From%20website">
+                        <p><i class="far fa-envelope">  </i> cosin.alvaro@gmail.com</p>
+                    </a>
+                </header>
+            </section>
+        </main>
+        
+    </body>
+    <script>
+        document.querySelectorAll('[data-highlight-visible]').forEach(el => {
+            const links = el.querySelectorAll('a[href^="#"]');
+            const targets = document.querySelectorAll(Array.from(links).map(link => link.getAttribute('href')).join(', '));
+            const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    links.forEach(l => l.classList.remove('active'));
+                    Array.from(links).filter(l => l.getAttribute('href') === '#' + entry.target.id)[0].classList.add('active');
+                }
+                else {
+                    Array.from(links).filter(l => l.getAttribute('href') === '#' + entry.target.id)[0].classList.remove('active');
+                }
+            }), {threshold: 0.25});
+            targets.forEach(t => observer.observe(t));
+        });
+    </script>
+    <style>
+        .fa-linkedin-in {
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        
+        .fa-linkedin-in:before {
+            display: inline-block;
+            color: var(--link-color);
+            text-decoration: none;
+            transform: scale(1);
+            transition: transform 0.5s var(--easing);
+        }
+        
+        .fa-linkedin-in:hover::before {
+            transform: scale(1.5);
+        }
+        
+        .fa-file {
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        
+        .fa-file:before {
+            display: inline-block;
+            color: var(--link-color);
+            text-decoration: none;
+            transform: scale(1);
+            transition: transform 0.5s var(--easing);
+        }
+        
+        .fa-file:hover::before {
+            transform: scale(1.5);
+        }
+        
+        .fa-envelope {
+            font-size: 20px;
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        
+        .fa-envelope:before {
+            display: inline-block;
+            color: var(--link-color);
+            text-decoration: none;
+            transform: scale(1);
+            transition: transform 0.5s var(--easing);
+        }
+        
+        .fa-envelope:hover::before {
+            transform: scale(1.5);
+        }
+    </style>
+</html>
